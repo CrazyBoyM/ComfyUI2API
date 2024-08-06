@@ -54,9 +54,9 @@ def run_workflow(ws, workflow):
                 data = message["data"]
                 if data["node"] is None and data["prompt_id"] == prompt_id:
                     print("执行完成")
-                    break  # 执行完成
+                    break
         else:
-            continue  # 预览为二进制数据
+            continue
 
     with urllib.request.urlopen(
         f"http://{COMFYUI_ENDPOINT}/history/{prompt_id}"
